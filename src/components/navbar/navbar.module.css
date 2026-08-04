@@ -1,0 +1,54 @@
+/* Contenedor principal flotante abajo */
+.navbarContainer {
+  position: fixed;
+  bottom: 20px; /* Margen inferior para efecto flotante tipo iOS */
+  left: 50%;
+  transform: translateX(-50%); /* Centra el navbar horizontalmente */
+   /* Responsivo en móviles */ /* Límite para que no se estire demasiado en desktop */
+  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+  
+  z-index: 1000; /* Asegura que siempre esté sobre el resto del contenido */
+}
+
+/* Cada opción del menú */
+.navItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  padding: 8px;
+}
+
+.icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Estado activo cuando la ruta coincide */
+.navItem.active {
+  color: #007aff; /* Azul estilo iOS */
+  transform: scale(1.05);
+}
+
+.navItemMain{
+    height: 80px;
+    width: 80px;
+    background: #F8F8F8;
+    border-radius: 100%;
+}
+.navItemSecundary{
+    height: 60px;
+    width: 60px;
+    background: #000;
+    border-radius: 100%;
+}
