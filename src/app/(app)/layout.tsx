@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Rubik } from "next/font/google";
-import "./globals.css";
+import { Rubik } from "next/font/google";
+import "@/ui/styles/globals.css";
 
-import Navbar from "@/components/navbar";
-import { HabitsProvider } from "@/context/habitsContext"; // 👈 Importamos el Provider
+import { ThemeProvider } from "@/ui/providers/theme-provider"; // 👈 Importamos el ThemeProvider
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -22,13 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${rubik.variable} h-full antialiased`}>
+    <html lang="en" className={`${rubik.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col">
-        {/* Envolvemos children y Navbar para que ambos compartan el estado */}
-        {/* <HabitsProvider> */}
-          <main className="flex-1">{children}</main>
-          {/* <Navbar />
-        </HabitsProvider> */}
+        <ThemeProvider>
+            <main className="flex-1">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-text: var(--text);
+  --color-text-muted: var(--textMuted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-success: var(--success);
+}
+
+
+@layer base {
+  :root, [data-theme="light"] {
+    --background: #FFFFFF;
+    --surface: #F8FAFC;
+    --card: #0ff;
+    --text: #0F172A;
+    --textMuted: #64748B;
+    --border: #E2E8F0;
+    --primary: #0F172A;
+    --accent: #6366F1;
+    --success: #10B981;
+  }
+
+  [data-theme="dark"], .dark {
+    --background: #0B0F17;
+    --surface: #0F172A;
+    --card: #1E293B;
+    --text: #F8FAFC;
+    --textMuted: #94A3B8;
+    --border: #334155;
+    --primary: #F8FAFC;
+    --accent: #6366F1;
+    --success: #10B981;
+  }
+
+  [data-theme="celeste-oscuro"] {
+    --background: #06141D;
+    --surface: #0B2230;
+    --card: #0f0;
+    --text: #E0F2FE;
+    --textMuted: #7DD3FC;
+    --border: #1E3A8A;
+    --primary: #38BDF8;
+    --accent: #0EA5E9;
+    --success: #10B981;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--text);
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}

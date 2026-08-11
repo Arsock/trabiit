@@ -2,8 +2,11 @@
 
 import React, { useState, useRef } from 'react';
 import { MorphingModal, BackdropType, ModalPosition } from '../../components/modal'; 
+import {useTheme} from 'next-themes'
 
 export default function MultiModalExample() {
+  const { theme, setTheme } = useTheme();
+
   const [activeModalId, setActiveModalId] = useState<string | null>(null);
   
   // Guardamos la configuración del último modal abierto para no perder su contenido
@@ -26,16 +29,22 @@ export default function MultiModalExample() {
     <div className="p-10 flex gap-4">
       <button
         onClick={(e) => handleOpenModal({ id: '1', title: 'Boton2', color: 'bg-emerald-500', }, e)}
-        className="px-6 py-3 bg-emerald-500 rounded-full text-black font-semibold"
+        className="px-6 py-3 rounded-full text-black font-semibold "
       >
         Boton 1
       </button>
 
       <button
         onClick={(e) => handleOpenModal({ id: '2', title: 'Modal 2', color: 'bg-indigo-600' }, e)}
-        className="px-6 py-3 bg-indigo-600 rounded-full text-white font-semibold"
+        className="px-6 py-3 bg-card rounded-full text-white font-semibold"
       >
         Boton 2
+      </button>
+      <button onClick={()=> setTheme("celeste-oscuro")}>
+        xd
+      </button>
+      <button onClick={()=> setTheme("light")}>
+        xd
       </button>
 
       {/* RENDERIZADO SIEMPRE ACTIVO CUANDO HAYA SIDO CONFIGURADO */}
