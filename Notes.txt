@@ -1,1 +1,3 @@
-Falta ver si el theme se maneja entre ts/taildwind
+1- Agregar los colores faltantes al negro
+
+2- hacer el container del dashboard

@@ -29,21 +29,21 @@ export default function MultiModalExample() {
     <div className="p-10 flex gap-4">
       <button
         onClick={(e) => handleOpenModal({ id: '1', title: 'Boton2', color: 'bg-emerald-500', }, e)}
-        className="px-6 py-3 rounded-full text-black font-semibold "
+        className="px-6 py-3 bg-primary rounded-full text-primary-foreground font-semibold "
       >
         Boton 1
       </button>
 
       <button
         onClick={(e) => handleOpenModal({ id: '2', title: 'Modal 2', color: 'bg-indigo-600' }, e)}
-        className="px-6 py-3 bg-card rounded-full text-white font-semibold"
+        className="px-6 py-3 bg-primary rounded-full text-primary-foreground font-semibold"
       >
         Boton 2
       </button>
-      <button onClick={()=> setTheme("celeste-oscuro")}>
+      <button onClick={()=> setTheme("dark")} className='text-primary'>
         xd
       </button>
-      <button onClick={()=> setTheme("light")}>
+      <button onClick={()=> setTheme("light")} className='text-primary'>
         xd
       </button>
 
