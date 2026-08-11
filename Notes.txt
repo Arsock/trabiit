@@ -1,0 +1,1 @@
+Falta ver si el theme se maneja entre ts/taildwind

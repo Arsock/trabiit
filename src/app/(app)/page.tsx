@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { MorphingModal, BackdropType, ModalPosition } from '../components/modal'; 
+import { MorphingModal, BackdropType, ModalPosition } from '../../components/modal'; 
 
 export default function MultiModalExample() {
   const [activeModalId, setActiveModalId] = useState<string | null>(null);
@@ -25,7 +25,7 @@ export default function MultiModalExample() {
   return (
     <div className="p-10 flex gap-4">
       <button
-        onClick={(e) => handleOpenModal({ id: '1', title: 'Modal 1', color: 'bg-emerald-500' }, e)}
+        onClick={(e) => handleOpenModal({ id: '1', title: 'Boton2', color: 'bg-emerald-500', }, e)}
         className="px-6 py-3 bg-emerald-500 rounded-full text-black font-semibold"
       >
         Boton 1
@@ -46,6 +46,8 @@ export default function MultiModalExample() {
           triggerRef={activeTriggerRef}
           buttonContent={lastConfig.title}
           buttonColor={lastConfig.color}
+          position="trigger"
+          backdropType='transparent'
           
         >
           <div className="space-y-4">
