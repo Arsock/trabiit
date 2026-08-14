@@ -4,7 +4,7 @@ export const HabitDashboard = () => {
   const percentage = 100;
 
   return (
-    <div className="relative h-90 bg-card rounded-[20px] p-12.5 overflow-hidden">
+    <div className="w-full relative h-90 bg-card rounded-[20px] p-12.5 overflow-hidden">
       
       {/* las bolas del demonio v1 */}
       <div className="absolute top-[-20%] left-[-10%] w-80 h-80 rounded-full bg-black/30 blur-2xl animate-orbit-1 pointer-events-none" />

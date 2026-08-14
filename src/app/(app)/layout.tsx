@@ -21,10 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" style={{fontFamily:"rubik"}} className={` h-full antialiased`} suppressHydrationWarning>
-      <body className="min-h-full flex flex-col">
+    <html lang="en" style={{fontFamily:"rubik"}} className={`${rubik.variable} h-full antialiased`} suppressHydrationWarning>
+      <body className="min-h-full">
         <ThemeProvider>
-            <main className="flex-1">{children}</main>
+          <main className="w-full">
+            <div className="w-full max-w-237.5 mx-auto px-4">
+              {children}
+            </div>
+          </main>
         </ThemeProvider>
       </body>
     </html>

@@ -77,6 +77,6 @@
     background-color: var(--background);
     color: var(--text);
     transition: background-color 0.2s ease, color 0.2s ease;
-    padding: 50px 20rem 0 20rem;
+    padding-top: 50px;
   }
 }
