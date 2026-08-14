@@ -1,7 +1,7 @@
 import { ProgressCircle } from "./ProgressCircle";
 
 export const HabitDashboard = () => {
-  const percentage = 100;
+  const percentage = 70;
 
   return (
     <div className="w-full relative h-90 bg-card rounded-[20px] p-12.5 overflow-hidden">
