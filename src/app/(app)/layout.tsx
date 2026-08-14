@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
-import "@/ui/styles/globals.css";
+import "../globals.css";
 
 import { ThemeProvider } from "@/ui/providers/theme-provider"; // 👈 Importamos el ThemeProvider
 
@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${rubik.variable} h-full antialiased`} suppressHydrationWarning>
+    <html lang="en" style={{fontFamily:"rubik"}} className={` h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col">
         <ThemeProvider>
             <main className="flex-1">{children}</main>

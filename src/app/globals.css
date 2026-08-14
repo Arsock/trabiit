@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-card: var(--card);
+  --color-card-gradient-primary: var(--card-gradient-primary);
+  --color-card-gradient-secundary: var(--card-gradient-secundary);
+
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+
+  /* Animaciones de órbita por el contenedor */
+  --animate-orbit-1: orbitOne 25s ease-in-out infinite;
+  --animate-orbit-2: orbitTwo 25s ease-in-out infinite;
+
+  /* Esfera 1: Se mueve en sentido horario por las esquinas */
+  @keyframes orbitOne {
+    0%, 100% { transform: translate(0px, 0px); }
+    25%      { transform: translate(180px, 40px); }
+    50%      { transform: translate(140px, 120px); }
+    75%      { transform: translate(-40px, 90px); }
+  }
+
+  /* Esfera 2: Se mueve en sentido inverso */
+  @keyframes orbitTwo {
+    0%, 100% { transform: translate(0px, 0px); }
+    25%      { transform: translate(-160px, -50px); }
+    50%      { transform: translate(-120px, -110px); }
+    75%      { transform: translate(50px, -60px); }
+  }
+}
+
+/* Textura de ruido */
+@utility noise-pattern {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><filter id='noise'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100' height='100' filter='url(%23noise)' opacity='0.4'/></svg>");
+}
+
+@layer base {
+  :root,
+  [data-theme="light"] {
+    --primary: #000000;
+    --primary-foreground: #ffffff;
+    --secondary: #00000038;
+
+    --background: #ffffff;
+    --surface: #ffffffad;
+    --card: #f8f8f8;
+    --card-gradient-primary: #000000;
+    --card-gradient-secundary: #afafaf;
+
+    --text: #3a3a3a;
+    --text-muted: #878787;
+  }
+
+  [data-theme="dark"],
+  .dark {
+    --primary: #FFFFFF;
+    --primary-foreground: #000;
+    --secondary: #00000038;
+
+    --background: #0A0A0A;
+    --surface: #ffffffad;
+    --card: #f8f8f887;
+    --card-gradient-primary: #000000;
+    --card-gradient-secundary: #afafaf;
+
+    --text: #fff;
+    --text-muted: #878787;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--text);
+    transition: background-color 0.2s ease, color 0.2s ease;
+    padding: 50px 20rem 0 20rem;
+  }
+}
